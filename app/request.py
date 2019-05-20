@@ -19,11 +19,12 @@ def get_sources(category):
         get_sources_data = url.read()
         get_sources_response = json.loads(get_sources_data)
 
-        source_results = None
+        source_results = {}
+        
         if get_sources_response['sources']:
             source_results_list = get_sources_response['sources']
             source_results = process_results(source_results_list)
-
+            # print(source_results_list)
         return source_results
 
 def process_results(source_list):
@@ -40,7 +41,12 @@ def process_results(source_list):
         name = article_item.get('name')
         author = article_item.get('author')
         title = article_item.get('title')
+        category = article_item.get('category')
         description = article_item.get('description')
         urlToImage = article_item.get('urlToImage')
+        url= article_item.get('url')
+        
+        source_object = Source(name,author,title,description,category,urlToImage,url)
+        source_results.append(source_object)
 
     return source_results
