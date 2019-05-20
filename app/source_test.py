@@ -15,7 +15,7 @@ class SourcesTest(unittest.TestCase):
         '''
 
         self.new_source = Source('BBC', 'stanley', 'A great big world',
-                                 'It has always been of difference with everybody estimating the universe size', 'sports')
+                                 'It has always been of difference with everybody estimating the universe size', 'sports', 'https://umar.com')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_source, Source))
@@ -31,6 +31,7 @@ class SourcesTest(unittest.TestCase):
         self.assertEqual(self.new_source.description,
                          'It has always been of difference with everybody estimating the universe size')
         self.assertEqual(self.new_source.category, 'sports')
+        self.assertEqual(self.new_source.urlToImage, 'https://umar.com')
 
 
 if __name__ == "__main__":
