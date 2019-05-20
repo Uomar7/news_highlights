@@ -15,9 +15,38 @@
     <h3>Business News</h3>
     <ul>
         {% for business_news in business %}
-        <li class='list-unstyled'>{{ business_news.url }}</li>
+        <li class='list-unstyled'>{{ business_news.name }}</li>
         {% endfor %}
     </ul>
+
+    <h3>Sports News</h3>
+    <ul>
+        {% for sports_news in sports %}
+        <li class='list-unstyled'>{{ sports_news.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Technology</h3>
+    <ul>
+        {% for tech_news in tech %}
+        <li class='list-unstyled'>{{ tech_news.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Science</h3>
+    <ul>
+        {% for science_news in science %}
+        <li class='list-unstyled'>{{ science_news.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Entertainment</h3>
+    <ul>
+        {% for ent_news in ent %}
+        <li class='list-unstyled'>{{ ent_news.name }}</li>
+        {% endfor %}
+    </ul>
+
     
 </body>
 </html>
