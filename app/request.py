@@ -1,5 +1,5 @@
 from app import app
-from urllib.request,json
+import urllib.request,json
 from .models import sources
 
 Source = sources.Source
@@ -7,21 +7,21 @@ Source = sources.Source
 # Getting the api key
 api_key = app.config['NEWS_API_KEY']
 # Getting the base url
-base_url = app.config['https://newsapi.org/v2/sources?language=en&category={}&apiKey={}']
+# base_url = app.config["https://newsapi.org/v2/sources?language=en&category={}&apiKey={}"]
 
 def get_sources(category):
     '''
     functions that gets the json response to our url request
     '''
+    get_sources_url = 'https://newsapi.org/v2/sources?language=en&category={}&apiKey={}'.format(category, api_key)
 
-    get_sources_url = base_url.format(category,api_key)
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
         get_sources_response = json.loads(get_sources_data)
 
         source_results = None
-        if get_sources_response['articles']:
-            source_results_list = get_sources_response['articles']
+        if get_sources_response['sources']:
+            source_results_list = get_sources_response['sources']
             source_results = process_results(source_results_list)
 
         return source_results
