@@ -3,7 +3,7 @@ class Config:
     general configuration for the app
     '''
 
-    pass
+    NEWS_BASE_URL = 'https://newsapi.org/v2/sources?language=en&category={}&apiKey={}'
 
 class ProdConfig:
     '''
