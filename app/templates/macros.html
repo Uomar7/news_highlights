@@ -1,0 +1,8 @@
+{% macro displaySourcesList(source_list) %}
+    {% for source in source_list %}
+    <li class="list unstyled"> {{ source.name}} </li>
+    <!-- <li class="list unstyled"> {{ source.author }} </li> -->
+    <li class="list unstyled"> {{ source.description }} </li>
+    <li class="list unstyled"> {{ source.url }} </li>
+    {% endfor %}
+{% endmacro %}
