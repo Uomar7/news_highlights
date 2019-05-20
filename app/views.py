@@ -9,3 +9,11 @@ def index():
     '''
 
     return render_template('index.html')
+
+@app.route('/source/<source>')
+def source(source):
+    '''
+    view movie page function that returns the new movie details page
+    '''
+
+    return render_template('index.html')
