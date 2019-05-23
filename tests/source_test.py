@@ -1,7 +1,7 @@
 import unittest
-from models import sources
+from app.models import Source,Articles
 
-Source = sources.Source
+# Source = sources.Source
 
 
 class SourcesTest(unittest.TestCase):
@@ -34,5 +34,5 @@ class SourcesTest(unittest.TestCase):
         self.assertEqual(self.new_source.urlToImage, 'https://umar.com')
 
 
-if __name__ == "__main__":
-    unittest.main()
+# if __name__ == "__main__":
+#     unittest.main()
